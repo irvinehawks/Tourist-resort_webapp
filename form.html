@@ -1,0 +1,172 @@
+<DOCTYPE html>
+    <html lang="eng">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" description="width=device-width,initial-scale=1.0,shrink-to-fit=0">
+        <!--bootsrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!--my css stylesheet-->
+        <link rel="stylesheet" href="my.css">
+
+        <tittle id="title"><h1>Splash cleaning</h1></tittle>
+      </head>
+
+      <body onload='hideTotal()'>
+        <main>
+          <div id="wrap">
+            <form action="" id="cakeform" onsubmit="return false;">
+            <div>
+                <div class="cont_order">
+                  <fieldset>
+                    <legend>Choose your cleaning preferences!</legend>
+                    
+                    <label >Choose type of cleaning</label>
+                    <select id="filling" name='filling' onchange="calculateTotal()">
+                    <option value="None">Select other special services</option>
+                    <option value="special1">(ZAR)</option>
+                    <option value="special2">(ZAR)</option>
+                    <option value="special3">(ZAR)</option>
+                    </select>
+
+                    <br>
+
+                    <p><label>Tick checkboxes for preferences</label></p>
+                    <label class='Radiolabel'><input type="radio"  name="selectedpreference" value="Round6" onclick="calculateTotal()" />STANDARD(ZAR 1000.00)</label><br/>
+                    <label class='Radiolabel'><input type="radio"  name="selectedpreference" value="Round8" onclick="calculateTotal()" />DEEP(ZAR 1500.00)</label><br/>
+                    <label class='Radiolabel'><input type="radio"  name="selectedpreference" value="Round10" onclick="calculateTotal()" />MOVE IN&OUT(ZAR 2500)</label><br/>
+                    <label class='Radiolabel'><input type="radio"  name="selectedpreference" value="Round12" onclick="calculateTotal()" />(ZAR)</label><br/>
+                    <br/>
+
+                    <br/>
+                    <p>
+                    <label for='includecandles' class="inlinelabel">Include Cleaning Oven(ZAR 100)</label>
+                    <input type="checkbox" id="includeoven" name='includeoven' onclick="calculateTotal()" />
+                    </p>
+                   
+                    <p>
+                    <label class="inlinelabel" for='includewindows'>Include Cleaning Windows(ZAR 100)</label>
+                    <input type="checkbox" id="includewindows" name="includewindows" onclick="calculateTotal()" />
+                    </p>
+
+                    <p>
+                    <label class="inlinelabel" for='includefridge'>Include cleaning fridge(ZAR 100)</label>
+                    <input type="checkbox" id="includefridge" name="includefridge" onclick="calculateTotal()" />
+                    </p>
+
+                    <p>
+                    <label class="inlinelabel" for='includeironing'>Include ironing(ZAR 100)</label>
+                    <input type="checkbox" id="includeironing" name="includeironing" onclick="calculateTotal()" />
+                    </p>
+
+                    <p>
+                    <label class="inlinelabel" for='includehousechores'>Include house chores(ZAR 100)</label>
+                    <input type="checkbox" id="includehousechores" name="includehousechores" onclick="calculateTotal()" />
+                    </p>
+
+                    <p>
+                    <label class="inlinelabel" for='includemaidrental'>Include Maid Rentral(ZAR 100)</label>
+                    <input type="checkbox" id="includemaidrental" name="includemaidrental" onclick="calculateTotal()" />
+                    </p>
+
+                    <p>
+                    <label class="inlinelabel" for='includeuphostery'>Include Uphostery cleaning(ZAR 100)</label>
+                    <input type="checkbox" id="includeuphostery" name="includeuphostery "onclick="calculateTotal()" />
+                    </p>
+
+                    <br>
+                    <div id="text total"><b>Total price will pop up on the box below:</b></div>
+                    <div id="totalPrice"></div>
+                    
+                  </fieldset>
+                </div>
+
+                <br>
+                <br>
+                
+              <div class="cont_details">
+
+                <!--
+                  <fieldset>
+                    <legend>Contact Details</legend>
+                    <label for='name'>Name</label>
+                    <input type="text" id="name" name='name' />
+                    <br/>
+                    <label for='address'>Address</label>
+                    <input type="text" id="address" name='address' />
+                    <br/>
+                    <label for='phonenumber'>Phone Number</label>
+                    <input type="text"  id="phonenumber" name='phonenumber'/>
+                    <br/>
+                    </fieldset>
+                </div>
+              -->
+                <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+            </div>  
+           </form>
+      </div><!--End of wrap-->
+        </main>
+        
+
+        
+
+
+            <!--javascript form frondend side validation
+        
+            <script>
+              const constraints = {
+                  name: {
+                      presence: { allowEmpty: false }
+                  },
+                  surname: {
+                      presence:{ allowEmpty: false}
+                  },
+                  email: {
+                      presence: { allowEmpty: false },
+                      email: true
+                  },
+                  tel: {
+                      presence: { allowEmpty: false }
+                  },
+                  age: {
+                      presence: { allowEmpty: false }
+                  },
+                  message: {
+                      presence: { allowEmpty: false }
+                  }
+
+              };
+           
+              const form = document.getElementById('contact-form');
+           
+              form.addEventListener('submit', function (event) {
+                const formValues = {
+                    name: form.elements.name.value,
+                    email: form.elements.email.value,
+                    message: form.elements.message.value
+                };
+           
+                const errors = validate(formValues, constraints);
+           
+                if (errors) {
+                  event.preventDefault();
+                  const errorMessage = Object
+                      .values(errors)
+                      .map(function (fieldValues) { return fieldValues.join(', ')})
+                      .join("\n");
+           
+                  alert(errorMessage);
+                }
+              }, false);
+           </script>
+
+          End of frondend validation-->
+           
+          <!--splash.js file-->
+            <script src="splash.js"></script>
+            <!--
+            <script src="https//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+            -->
+        
+      </body>
+    </html>
